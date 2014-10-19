@@ -1,0 +1,193 @@
+<?php 
+include('data/setup.php');
+if( $_SESSION['autenticacao'] != 10){
+   header('Location: login');
+}
+?>
+<!DOCTYPE html>
+<html lang="pt">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Sistema para clinícas médicas">
+      <meta name="author" content="Lucas Rafagnin - Isnaldo Matheus">
+      <link rel="shortcut icon" href="images/favicon.png">
+      <title>Apollo</title>
+      <!-- Bootstrap core CSS -->
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,700,800' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+      <link href="js/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+      <link rel="stylesheet" href="fonts/font-awesome-4/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="js/jquery.nanoscroller/nanoscroller.css" />
+      <link rel="stylesheet" type="text/css" href="js/bootstrap.slider/css/slider.css" />
+      <link rel="stylesheet" type="text/css" href="js/intro.js/introjs.css" />
+      <link rel="stylesheet" type="text/css" href="js/bootstrap.switch/bootstrap-switch.min.css" />
+      <link rel="stylesheet" type="text/css" href="js/bootstrap.datetimepicker/css/bootstrap-datetimepicker.min.css" />
+      <link rel="stylesheet" type="text/css" href="js/jquery.select2/select2.css" />
+      <link rel="stylesheet" type="text/css" href="js/bootstrap.daterangepicker/daterangepicker-bs3.css" />
+      <link rel="stylesheet" href="css/pygments.css">
+      <link href="js/jquery.icheck/skins/square/blue.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="js/bootstrap.datetimepicker/css/bootstrap-datetimepicker.min.css" />
+      <link rel="stylesheet" type="text/css" href="js/jquery.niftymodals/css/component.css" />
+      <link rel="stylesheet" type="text/css" href="js/jquery.easypiechart/jquery.easy-pie-chart.css" />
+      
+      <link href="css/style.css" rel="stylesheet" />
+   </head>
+   <body>
+      <!-- Fixed navbar -->
+      <?php include('inc-topo.php');?>
+      </div>
+      </div>
+      <?php include('inc-menu.php');?>
+      <div class="page-head">
+        <a href="listar-pacientes" class="btn btn-primary btn-lg pull-right" role="button">Listar pacientes</a>
+				<h2>Novo paciente</h2>
+         <ol class="breadcrumb">
+            <li>Inicial</li>
+            <li>Cadastros</li>
+            <li class="active">Paciente</li>
+         </ol>
+      </div>
+	    
+      <div class="cl-mcont">
+      <div class="row-no-margin">
+      <div class="col-sm-12 col-md-12">
+      <div class="block-flat" style="padding:10px 20px; margin-bottom:0px">
+         <div class="header">
+            <h3>Dados pessoais</h3>
+         </div>
+         <div class="content">
+            <form class="form-horizontal" role="form" action="#">
+               <div class="form-group">
+                  <label class="col-sm-2 control-label">Nome completo:</label>
+                  <div class="col-sm-4">
+                     <input type="text" class="form-control">
+                  </div>
+                  <label class="col-sm-1 control-label">CPF:</label>
+                  <div class="col-sm-2">
+                     <input type="text" class="form-control" data-mask="cpf" placeholder="999.999.999-99">
+                  </div>
+                  <label class="col-sm-1 control-label">RG:</label>
+                  <div class="col-sm-2">
+                     <input type="text" class="form-control">
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="col-sm-2 control-label">e-mail:</label>
+                  <div class="col-sm-4">
+                     <input type="text" class="form-control" placeholder="nome@servidor.com">
+                  </div>
+                  <label class="col-sm-1 control-label">Telefone:</label>
+                  <div class="col-sm-2">
+                     <input type="text" class="form-control" data-mask="phone" placeholder="(88) 8888-8888">
+                  </div>
+                  <label class="col-sm-1 control-label">Celular:</label>
+                  <div class="col-sm-2">
+                     <input type="text" class="form-control" data-mask="phone" placeholder="(88) 8888-8888">
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="col-sm-2 control-label">Sexo:</label>
+                  <div class="col-sm-4">
+                     <label class="radio-inline"> <input type="radio" checked="true" name="rad1" class="icheck"> Masculino</label> 
+                     <label class="radio-inline"> <input type="radio" name="rad1" class="icheck"> Feminino</label> 
+                  </div>
+                  <label class="col-sm-1 control-label">Nascimento:</label>
+                  <div class="col-sm-2">
+                     <input type="text" data-mask="date" class="form-control" placeholder="DD/MM/YYYY" />
+                  </div>
+                  <label class="col-sm-1 control-label">Etnia:</label>
+                  <div class="col-sm-2">
+                     <select class="form-control">
+                        <option>Branco</option>
+                        <option>Negro</option>
+                        <option>Indígena</option>
+                        <option>Pardo</option>
+                        <option>Mulato</option>
+                        <option>Caboclo</option>
+                        <option>Cafuzo</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="header">
+                  <h3>Endereço</h3>
+               </div>
+               <br>
+               <div class="form-group">
+                  <label class="col-sm-2 control-label">Cep:</label>
+                  <div class="col-sm-4">
+                     <input type="text" class="form-control" data-mask="cep" placeholder="99999-999">
+                  </div>
+                  <label class="col-sm-1 control-label">Estado:</label>
+                  <div class="col-sm-2">
+                     <select class="form-control">
+                        <option>Paraná</option>
+                        <option>São Paulo</option>
+                     </select>
+                  </div>
+                  <label class="col-sm-1 control-label">Número:</label>
+                  <div class="col-sm-2">
+                     <input type="text" class="form-control" data-mask="numbers">
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="col-sm-2 control-label">Cidade:</label>
+                  <div class="col-sm-4">
+                     <select class="form-control">
+                        <option>Francisco Beltrão</option>
+                        <option>Verê</option>
+                     </select>
+                  </div>
+                  <label class="col-sm-1 control-label">Rua:</label>
+                  <div class="col-sm-2">
+                     <input type="text" class="form-control">
+                  </div>
+               </div>
+               <br>
+                <div class="form-group">
+                   <div class="col-sm-offset-8 col-sm-4">
+                      <button type="submit" class="btn btn-primary">Salvar</button>
+                      <button type="submit" class="btn btn-info">Salvar e continuar</button>
+                      <button class="btn btn-default">Cancelar</button>
+                   </div>
+                </div>
+            </form>
+            </div>
+         </div>
+      </div>
+      <script src="js/jquery.js"></script>
+      <script src="js/jquery.select2/select2.min.js" type="text/javascript"></script>
+      <script src="js/jquery.parsley/dist/parsley.js" type="text/javascript"></script>
+      <script src="js/bootstrap.slider/js/bootstrap-slider.js" type="text/javascript"></script>
+      <script type="text/javascript" src="js/jquery.nanoscroller/jquery.nanoscroller.js"></script>
+      <script type="text/javascript" src="js/jquery.nestable/jquery.nestable.js"></script>
+      <script type="text/javascript" src="js/behaviour/general.js"></script>
+      <script src="js/jquery.ui/jquery-ui.js" type="text/javascript"></script>
+      <script type="text/javascript" src="js/bootstrap.switch/bootstrap-switch.js"></script>
+      <script type="text/javascript" src="js/bootstrap.datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+      <script type="text/javascript" src="js/jquery.icheck/icheck.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.daterangepicker/moment.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.daterangepicker/daterangepicker.js"></script>
+      <script src="js/jquery.maskedinput/jquery.maskedinput.js" type="text/javascript"></script>
+      <script type="text/javascript" src="js/jquery.niftymodals/js/jquery.modalEffects.js"></script>   
+      <script type="text/javascript">
+         $(document).ready(function(){
+           //initialize the javascript
+           App.init();
+          $('.md-trigger').modalEffects(); 
+           App.masks();
+           App.dashBoard();  
+         
+         
+            // introJs().setOption('showBullets', false).start();
+         });
+      </script>
+      <script src="js/behaviour/voice-commands.js"></script>
+      <script src="js/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="js/jquery.flot/jquery.flot.js"></script>
+      <script type="text/javascript" src="js/jquery.flot/jquery.flot.pie.js"></script>
+      <script type="text/javascript" src="js/jquery.flot/jquery.flot.resize.js"></script>
+      <script type="text/javascript" src="js/jquery.flot/jquery.flot.labels.js"></script>
+   </body>
+</html>

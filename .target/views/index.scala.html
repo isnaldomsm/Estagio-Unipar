@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="shortcut icon" href='@routes.Assets.at("images/favicon.png")'>
+      <title>Apollo</title>
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,700,800' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Raleway:300,200,100' rel='stylesheet' type='text/css'>
+      <!-- Bootstrap core CSS -->
+      <link href='@routes.Assets.at("js/bootstrap/dist/css/bootstrap.css")' rel="stylesheet">
+      <link rel="stylesheet" href='@routes.Assets.at("fonts/font-awesome-4/css/font-awesome.min.css")'>
+      <!-- Custom styles for this template -->
+      <link href='@routes.Assets.at("css/style.css")' rel="stylesheet" />
+   </head>
+   <body class="texture">
+      <div id="cl-wrapper" class="login-container">
+         <div class="middle-login">
+            <div class="block-flat">
+               <div class="header">
+                  <h3 class="text-center">
+                     <!-- <img class="logo-img" src="images/logo.png" alt="logo"/> -->Apollo
+                  </h3>
+               </div>
+               <div>
+                  <form style="margin-bottom: 0px !important;" class="form-horizontal" action="data/login.php" method="GET" role="form">
+                     <div class="content">
+                        <h4 class="title">Acesso ao sistema</h4>
+                        <div class="form-group">
+                           <div class="col-sm-12">
+                              <div class="input-group">
+                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                 <input type="text" placeholder="Usuário" name="login" id="username" class="form-control">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <div class="col-sm-12">
+                              <div class="input-group">
+                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                 <input type="password" placeholder="Senha" id="password" name="senha" class="form-control">
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="foot">
+                        <button class="btn btn-primary" data-dismiss="modal" type="submit">Logar </button>
+                     </div>
+                     <!--Mensagem de erro de usuario e senha -->
+                     <?php 
+                           if(!empty($_SESSION['erro']) && $_SESSION['erro']  == 5 ):
+                     ?>
+                     <div class="alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                           <i class="fa fa-times-circle sign"></i><strong>Erro !</strong> Senha ou usuario errado.
+                       
+                     </div>
+                     <?php 
+                           endif;
+                     ?>
+                  </form>
+               </div>
+            </div>
+            <div class="text-center out-links"><a href="#">&copy; 2014 Apollo</a></div>
+         </div>
+      </div>
+      <script src='@routes.Assets.at("js/jquery.js")'></script>
+      <script type="text/javascript" src='@routes.Assets.at("js/behaviour/general.js")'></script>
+      <script src='@routes.Assets.at("js/bootstrap/dist/js/bootstrap.min.js")'></script>
+   </body>
+</html>

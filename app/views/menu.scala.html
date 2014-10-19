@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<div id="cl-wrapper" class="fixed-menu">
+<div class="cl-sidebar" data-position="right" data-step="1" data-intro="<strong>Fixed Sidebar</strong> <br/> It adjust to your needs." >
+   <div class="cl-toggle"><i class="fa fa-bars"></i></div>
+   <div class="cl-navblock">
+      <div class="menu-space">
+         <div class="content">
+            <div class="side-user">
+               <div class="avatar"><img src="images/default_user.png" alt="Avatar" /></div>
+               <div class="info">
+                  <a href="#"><?= !empty($_SESSION['nomeUsuario'])?$_SESSION['nomeUsuario']:'Usuario de teste.';?></a>
+               </div>
+            </div>
+            <ul class="cl-vnavigation">
+               <li><a href="home"><i class="fa fa-home"></i><span>Inicial</span></a></li>
+               <li><a href="agenda"><i class="fa fa-calendar"></i><span>Agenda</span></a></li>
+               <li><a href="agendamento"><i class="fa fa-user-md"></i><span>Novo agendamento</span></a>
+               <li><a href="#"><i class="fa fa-paperclip"></i><span>Prontuários</span></a></li>
+               <li>
+                  <a href="#"><i class="fa fa-edit"></i><span>Cadastros</span></a>
+                  <ul class="sub-menu">
+                     <li><a href="cadastro-paciente">Paciente</a></li>
+                     <li><a href="cadastro-medico">Médico</a></li>
+                     <li><a href="cadastro-funcionario">Funcionário</a></li>
+                     <li><a href="cadastro-plano-saude">Plano de saúde</a></li>
+                  </ul>
+               </li>
+               <li>
+                  <a href="#"><i class="fa fa-list"></i><span>Listar</span></a>
+                  <ul class="sub-menu">
+                     <li><a href="listar-pacientes">Pacientes</a></li>
+                     <li><a href="listar-medicos">Médicos</a></li>
+                     <li><a href="listar-funcionarios">Funcionários</a></li>
+                     <li><a href="listar-planos-saude">Planos de saúde</a></li>
+                  </ul>
+               </li>
+               <li>
+                  <a href="#"><i class="fa fa-print"></i><span>Relatórios</span></a>
+                  <ul class="sub-menu">
+                     <li><a href="pages-blank.html">Pacientes</a></li>
+                     <li><a href="pages-blank.html">Finanças</a></li>
+                  </ul>
+               </li>
+               <li>
+                  <a href="#"><i class="fa fa-money"></i><span>Financeiro</span></a>
+                  <ul class="sub-menu">
+                     <li><a href="financeiro">Cadastrar</a></li>
+                     <li><a href="listar-financeiro">Saldo</a></li>
+                  </ul>
+               </li>
+               <li>
+               	  <a href="#"><i class="fa fa-cogs fa-fw"></i><span>Configurações</span></a>
+                  <ul class="sub-menu">
+                     <li><a href="configurar_clinica.php">Clínica</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+      </div>
+      <div class="text-right collapse-button" style="padding:7px 9px;">
+         <button id="sidebar-collapse" class="btn btn-default" style=""><i style="color:#fff;" class="fa fa-angle-left"></i></button>
+      </div>
+   </div>
+</div>

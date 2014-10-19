@@ -1,0 +1,306 @@
+@(menu: Html, header: Html)
+<!DOCTYPE html>
+<html lang="pt">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Sistema para clinícas médicas">
+      <meta name="author" content="Lucas Rafagnin - Isnaldo Matheus">
+      <link rel="shortcut icon" href="images/favicon.png">
+      <title>Apollo</title>
+     <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,700,800' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Raleway:300,200,100' rel='stylesheet' type='text/css'>-->
+      <!-- Bootstrap core CSS -->
+      <link href='@routes.Assets.at("js/bootstrap/dist/css/bootstrap.css")' rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href='@routes.Assets.at("js/bootstrap.datetimepicker/css/bootstrap-datetimepicker.min.css")' />
+      <link rel="stylesheet" type="text/css" href='@routes.Assets.at("js/jquery.select2/select2.css")' />
+      <link rel="stylesheet" type="text/css" href='@routes.Assets.at("js/bootstrap.slider/css/slider.css")' />
+      <link href='@routes.Assets.at("js/fuelux/css/fuelux.css")' rel="stylesheet">
+      <link href='@routes.Assets.at("js/fuelux/css/fuelux-responsive.min.css")' rel="stylesheet">
+      <link rel="stylesheet" href='@routes.Assets.at("fonts/font-awesome-4/css/font-awesome.min.css")'>
+      <link rel="stylesheet" href='@routes.Assets.at("css/pygments.css")'>
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <![endif]-->
+      <link rel="stylesheet" type="text/css" href='@routes.Assets.at("js/jquery.nanoscroller/nanoscroller.css")' />
+      <link rel="stylesheet" type="text/css" href='@routes.Assets.at("js/bootstrap.switch/bootstrap-switch.css")' />
+      <!-- Custom styles for this template -->
+      <link href='@routes.Assets.at("css/style.css")' rel="stylesheet" />
+			
+			
+  <script>
+			$(function() {
+				$("#datepicker").datepicker();
+				$("#datepicker2").datepicker();
+				$("#datepicker3").datepicker();
+				$("#datepicker4").datepicker();
+			});
+		</script>
+   </head>
+   <body>
+   @header	
+    </div>
+    </div>
+    @menu
+      <div class="page-head">
+         <a class="btn btn-primary btn-lg pull-right">Anderson Odilo - 19 anos</a>
+         <h2>Consulta</h2>
+         <ol class="breadcrumb">
+            <li>Inicial</li>
+            <li class="active">Consulta</li>
+         </ol>
+      </div>
+      <div class="cl-mcont">
+         <div class="row-no-margin wizard-row">
+            <div class="col-md-12 fuelux">
+               <div class="block-wizard">
+                  <div id="wizard1" class="wizard wizard-ux">
+                     <ul class="steps">
+                        <li data-target="#step2"class="active">Anamnese<span class="chevron"></span></li>
+                        <li data-target="#step3">Exame físico<span class="chevron"></span></li>
+                        <li data-target="#step4">Diagnóstico<span class="chevron"></span></li>
+                        <li data-target="#step5">Evolução<span class="chevron"></span></li>
+                        <li data-target="#step6">Prescrição<span class="chevron"></span></li>
+                        <li data-target="#step7">Atestado<span class="chevron"></span></li>
+                     </ul>
+                     <div class="actions">
+                        <button type="button" class="btn btn-xs btn-prev btn-default"> <i class="icon-arrow-left"></i>Anterior</button>
+                        <button type="button" class="btn btn-xs btn-next btn-default" data-last="Finish">Próximo<i class="icon-arrow-right"></i></button>
+                     </div>
+                  </div>
+                  <div class="step-content">
+                     <form class="form-horizontal group-border-dashed" action="#" data-parsley-namespace="data-parsley-" data-parsley-validate novalidate>
+                        <div class="step-pane active" id="step2">
+                           <div class="form-group no-padding">
+                              <div class="col-sm-7">
+                                 <h3 class="hthin">Anamnese</h3>
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <label class="col-sm-3 control-label">Queixa principal (QP):</label>
+                              <div class="col-sm-6">
+                                 <input type="text" class="form-control">
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <label class="col-sm-3 control-label">Descrição (HDA):</label>
+                              <div class="col-sm-6">
+                                 <textarea class="form-control"></textarea>
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <label class="col-sm-3 control-label">História Patológica Pregressa (HPP):</label>
+                              <div class="col-sm-6">
+                                 <textarea class="form-control"></textarea>
+                              </div>
+                           </div>
+												   <div class="form-group">
+                              <label class="col-sm-3 control-label">Histórico Familiar (HF):</label>
+                              <div class="col-sm-6">
+                                 <textarea class="form-control"></textarea>
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <label class="col-sm-3 control-label">Alergias:</label>
+                              <div class="col-sm-1">
+                                 <input class="switch" checked data-size="big" name="op1" type="checkbox" checked />
+                              </div>
+                              <div class="col-sm-5">
+                                 <input type="password" class="form-control">
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <label class="col-sm-3 control-label">Gravidez:</label>
+                              <div class="col-sm-1">
+                                 <input class="switch" checked data-size="big" name="op2" type="checkbox" checked />
+                              </div>
+                              <div class="col-sm-5">
+                                 <input type="password" class="form-control">
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <label class="col-sm-3 control-label">Diabetes:</label>
+                              <div class="col-sm-1">
+                                 <input class="switch" checked data-size="big" name="op1" type="checkbox" checked />
+                              </div>
+                              <div class="col-sm-5">
+                                 <input type="password" class="form-control">
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <label class="col-sm-3 control-label">Hepatite:</label>
+                              <div class="col-sm-1">
+                                 <input class="switch" checked data-size="big" name="op1" type="checkbox" checked />
+                              </div>
+                              <div class="col-sm-5">
+                                 <input type="password" class="form-control">
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <label class="col-sm-3 control-label">Medicamento:</label>
+                              <div class="col-sm-1">
+                                 <input class="switch" checked data-size="big" name="op1" type="checkbox" checked />
+                              </div>
+                              <div class="col-sm-5">
+                                 <input type="password" class="form-control">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="step-pane" id="step3">
+                        	<div class="form-group no-padding">
+                              <div class="col-sm-7">
+                                 <h3 class="hthin">Exame físico</h3>
+                              </div>
+                           </div>
+		                      <div class="form-group">
+		                          <label class="col-sm-3 control-label">Eletrocardiograma (ECG):</label>
+		                          <div class="col-sm-1">
+		                             <input class="switch" checked data-size="big" name="op1" type="checkbox" checked />
+		                          </div>
+		                          <div class="col-sm-5">
+		                             <input type="password" class="form-control">
+		                          </div>
+		                       </div>
+		                       <div class="form-group">
+		                          <label class="col-sm-3 control-label">Pressão arterial (PxA):</label>
+		                          <div class="col-sm-1">
+		                             <input class="switch" checked data-size="big" name="op1" type="checkbox" checked />
+		                          </div>
+		                          <div class="col-sm-5">
+		                             <input type="password" class="form-control">
+		                          </div>
+		                       </div>
+ 		                       <div class="form-group">
+		                          <label class="col-sm-3 control-label">Ruído cardiaco regular (RCR):</label>
+		                          <div class="col-sm-1">
+		                             <input class="switch" checked data-size="big" name="op1" type="checkbox" checked />
+		                          </div>
+		                          <div class="col-sm-5">
+		                             <input type="password" class="form-control">
+		                          </div>
+		                       </div>
+		                       <div class="form-group">
+		                          <label class="col-sm-3 control-label">Temperatura:</label>
+		                          <div class="col-sm-1">
+		                             <input class="switch" checked data-size="big" name="op1" type="checkbox" checked />
+		                          </div>
+		                          <div class="col-sm-5">
+		                             <input type="password" class="form-control">
+		                          </div>
+		                       </div>
+		                       <div class="form-group">
+                              <label class="col-sm-3 control-label">Observações:</label>
+                              <div class="col-sm-6">
+                                 <input type="text" class="form-control">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="step-pane" id="step4">
+                        </div>
+                        <div class="step-pane" id="step5">
+                           
+                        </div>
+                        <div class="step-pane" id="step6">
+                        <div class="form-group no-padding">
+                              <div class="col-sm-7">
+                                 <h3 class="hthin">Prescrições Médicas</h3>
+                              </div>
+                        </div>
+
+                       <div class="form-group">
+                              <label style="margin-left:-50px;" class="col-sm-2 control-label">Nome completo:</label>
+                              <div class="col-sm-4">
+                                 <input type="text" class="form-control">
+                              </div>
+                              <label class="col-sm-1 control-label">Inicio:</label>
+                              <div class="col-sm-2">
+                                 <input type="text" class="form-control" data-mask="cpf" id="datepicker">
+                              </div>
+                              <label class="col-sm-1 control-label">Fim:</label>
+                              <div class="col-sm-2">
+                                 <input type="text" class="form-control" id="datepicker2">
+                              </div>
+                           </div><div class="form-group">
+										        <div class="col-sm-12">
+															<textarea class="form-control"></textarea>
+										     		</div>
+										     		</div>
+                         <div class="form-group">
+                            <div class="col-sm-2">
+	        					         	<a href="#" class="btn btn-default" role="button">Imprimir</a>
+					                  </div>
+                         </div>
+                        </div>
+
+                        <div class="step-pane" id="step7">
+                           
+                        <div class="form-group no-padding">
+                              <div class="col-sm-7">
+                                 <h3 class="hthin">Atestado Médico</h3>
+                              </div>
+                           </div>
+                        <div class="form-group">
+                              <label style="margin-left:-50px;" class="col-sm-2 control-label">Nome completo:</label>
+                              <div class="col-sm-4">
+                                 <input type="text" class="form-control">
+                              </div>
+                              <label class="col-sm-1 control-label">Inicio:</label>
+                              <div class="col-sm-2">
+                                 <input type="text" class="form-control" data-mask="cpf" id="datepicker3">
+                              </div>
+                              <label class="col-sm-1 control-label">Fim:</label>
+                              <div class="col-sm-2">
+                                 <input type="text" class="form-control" id="datepicker4">
+                              </div>
+                           </div>
+                           <div class="form-group">
+										        <div class="col-sm-12">
+															<textarea class="form-control"></textarea>
+										     		</div>
+										     		</div>
+                          <div class="form-group">
+                            <div class="col-sm-2">
+	        					         	<a href="#" class="btn btn-default" role="button">Imprimir</a>
+					                  </div>
+                          </div>
+                        </div>
+
+
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src='@routes.Assets.at("js/jquery.js")'></script>
+      <script src='@routes.Assets.at("js/jquery.select2/select2.min.js")' type="text/javascript"></script>
+      <script src='@routes.Assets.at("js/jquery.parsley/dist/parsley.js")' type="text/javascript"></script>
+      <script src='@routes.Assets.at("js/bootstrap.slider/js/bootstrap-slider.js")' type="text/javascript"></script>
+      <script type="text/javascript" src='@routes.Assets.at("js/fuelux/loader.min.js")'></script>	
+      <script src='@routes.Assets.at("js/modernizr.js")' type="text/javascript"></script>
+      <script type="text/javascript" src='@routes.Assets.at("js/jquery.nanoscroller/jquery.nanoscroller.js")'></script>
+      <script type="text/javascript" src='@routes.Assets.at("js/bootstrap.switch/bootstrap-switch.js")'></script>
+      <script type="text/javascript" src='@routes.Assets.at("js/jquery.nestable/jquery.nestable.js")'></script>
+      <script type="text/javascript" src='@routes.Assets.at("js/bootstrap.datetimepicker/js/bootstrap-datetimepicker.min.js")'></script>
+      <script type="text/javascript" src='@routes.Assets.at("js/behaviour/general.js")'></script>
+      <script type="text/javascript" src='@routes.Assets.at("js/jquery.ui/jquery-ui.js")'></script>
+      <script type="text/javascript">
+							$("#credit_slider").slider().on("slide", function(e) {
+								$("#credits").html("$" + e.value);
+							});
+							$("#rate_slider").slider().on("slide", function(e) {
+								$("#rate").html(e.value + "%");
+							});
+						</script>
+      <script type="text/javascript">
+							$(document).ready(function() {
+								//initialize the javascript
+								App.init();
+								App.wizard();
+							});
+						</script>
+   </body>
+</html>
+

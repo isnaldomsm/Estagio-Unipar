@@ -1,0 +1,115 @@
+<?php 
+include('data/setup.php');
+if( $_SESSION['autenticacao'] != 10){
+   header('Location: login');
+}
+?>
+<!DOCTYPE html>
+<html lang="pt">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Sistema para clinícas médicas">
+      <meta name="author" content="Lucas Rafagnin - Isnaldo Matheus">
+      <link rel="shortcut icon" href="images/favicon.png">
+      <title>Apollo</title>
+      <!-- Bootstrap core CSS -->
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,700,800' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+      <link href="js/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+      <link rel="stylesheet" href="fonts/font-awesome-4/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="js/intro.js/introjs.css" />
+      <link rel="stylesheet" type="text/css" href="js/bootstrap.switch/bootstrap-switch.min.css" />
+      <link rel="stylesheet" type="text/css" href="js/jquery.datatables/bootstrap-adapter/css/datatables.css" />
+      <link href="css/style.css" rel="stylesheet" />
+   </head>
+   <body>
+      <?php include('inc-topo.php');?>
+      </div>
+      </div>
+      <?php include('inc-menu.php');?>
+      <div class="page-head">
+				 <a href="cadastro-funcionario" class="btn btn-primary btn-lg pull-right" role="button">Novo funcionário</a>
+         <h2>Lista de funcionários</h2>
+         <ol class="breadcrumb">
+            <li>Inicial</li>
+            <li>Listar</li>
+            <li class="active">Funcionários</li>
+         </ol>
+      </div>
+      <div class="cl-mcont">
+         <div class="row-no-margin">
+            <div class="col-md-12">
+               <div class="block-flat" style="padding:0px 20px; margin-bottom:0px">
+                  <div class="content">
+                     <div class="table-responsive">
+                       <table class="table table-bordered" id="datatable-icons" >
+                           <thead>
+                              <tr>
+                                 <th>Nome</th>
+                                 <th>Idade</th>
+                                 <th>Celular</th>
+                                 <th>Cidade</th>
+                                 <th>CPF</th>
+                                 <th>Opções</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr class="odd gradeX">
+                                 <td>Susana Oliveira</td>
+                                 <td>23</td>
+                                 <td>(46) 8888-8888</td>
+                                 <td>Francisco Beltrão</td>
+                                 <td class="center">042.933.333-02</td>
+                                 <td class="center"></td>
+                              </tr>
+                              <tr class="odd gradeX">
+                                 <td>Samara Rodrigues</td>
+                                 <td>18</td>
+                                 <td>(46) 8888-3333</td>
+                                 <td>Verê</td>
+                                 <td class="center">123.423.841-55</td>
+                                 <td class="center"></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="js/jquery.js"></script>
+      <script src="js/jquery.select2/select2.min.js" type="text/javascript"></script>
+      <script src="js/bootstrap.slider/js/bootstrap-slider.js" type="text/javascript"></script>
+      <script type="text/javascript" src="js/jquery.nanoscroller/jquery.nanoscroller.js"></script>
+      <script type="text/javascript" src="js/jquery.nestable/jquery.nestable.js"></script>
+      <script type="text/javascript" src="js/behaviour/general.js"></script>
+      <script src="js/jquery.ui/jquery-ui.js" type="text/javascript"></script>
+      <script type="text/javascript" src="js/bootstrap.switch/bootstrap-switch.js"></script>
+      <script type="text/javascript" src="js/bootstrap.datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+      <script type="text/javascript" src="js/jquery.datatables/jquery.datatables.min.js"></script>
+      <script type="text/javascript" src="js/jquery.datatables/bootstrap-adapter/js/datatables.js"></script>
+      
+      <script type="text/javascript">
+      
+         //Add dataTable Icons
+         var functions = $('<a class="btn btn-default btn-xs" href="//www.globo.com" data-original-title="Abrir" data-toggle="tooltip"><i class="fa fa-file"></i></a> <a class="btn btn-primary btn-xs" href="#" data-original-title="Editar" data-toggle="tooltip"><i class="fa fa-pencil"></i></a> <a class="btn btn-danger btn-xs" href="#" data-original-title="Deletar" data-toggle="tooltip"><i class="fa fa-times"></i></a>');
+         $("#datatable-icons tbody tr td:last-child").each(function(){
+         $(this).html("");
+         functions.clone().appendTo(this);
+         });
+         
+         $(document).ready(function(){
+         App.init();
+         App.dataTables();
+         
+         //Horizontal Icons dataTable
+         $('#datatable-icons').dataTable();
+         });
+      </script>
+      
+      <script src="js/bootstrap/dist/js/bootstrap.min.js"></script>
+   </body>
+</html>
