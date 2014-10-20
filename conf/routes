@@ -12,6 +12,8 @@ GET     /cadastro-funcionario       controllers.FuncionarioController.create()
 GET     /listar-funcionarios        controllers.FuncionarioController.read()
 GET     /cadastro-plano-saude       controllers.PlanoSaudeController.create()
 GET     /listar-planos-saude        controllers.PlanoSaudeController.read()
+GET     /financeiro        controllers.FinanceiroController.create()
+GET     /listar-financeiro          controllers.FinanceiroController.read()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
