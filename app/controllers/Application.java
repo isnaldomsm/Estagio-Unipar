@@ -5,11 +5,12 @@ import play.mvc.Result;
 import views.html.header;
 import views.html.medico;
 import views.html.menu;
+import views.html.paciente;
 
 public class Application extends Controller {
 
 	public static Result index() {
-		return ok(medico.render(menu.render(), header.render()));
+		return ok(paciente.render(menu.render(), header.render()));
 	}
 
 }
