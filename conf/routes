@@ -4,6 +4,14 @@
 
 # Home page
 GET     /                           controllers.Application.index()
+GET     /cadastro-paciente          controllers.PacienteController.create()
+GET     /listar-pacientes           controllers.PacienteController.read()
+GET     /cadastro-medico            controllers.MedicoController.create()
+GET     /listar-medicos             controllers.MedicoController.read()
+GET     /cadastro-funcionario       controllers.FuncionarioController.create()
+GET     /listar-funcionarios        controllers.FuncionarioController.read()
+GET     /cadastro-plano-saude       controllers.PlanoSaudeController.create()
+GET     /listar-planos-saude        controllers.PlanoSaudeController.read()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
