@@ -10,11 +10,13 @@ import views.html.paciente;
 public class PacienteController extends Controller{
 
 	public static Result create() {
-		return ok(paciente.render(menu.render(), header.render()));
+//		return ok(paciente.render(menu.render(), header.render()));
+		return TODO;
 	}
 
 	public static Result read() {
-		return ok(listar_paciente.render(menu.render(), header.render()));
+//		return ok(listar_paciente.render(menu.render(), header.render()));
+		return TODO;
 	}
 
 	

@@ -9,6 +9,7 @@ import views.html.menu;
 public class PainelController extends Controller{
 
 	public static Result index() {
+		
 		return ok(home.render(menu.render(), header.render()));
 	}
 

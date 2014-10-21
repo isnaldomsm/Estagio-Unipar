@@ -17,6 +17,7 @@ GET     /listar-planos-saude        controllers.PlanoSaudeController.read()
 GET     /financeiro                 controllers.FinanceiroController.create()
 GET     /listar-financeiro          controllers.FinanceiroController.read()
 GET     /clinica                    controllers.ClinicaController.index()
+POST    /clinica                    controllers.ClinicaController.gravar()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

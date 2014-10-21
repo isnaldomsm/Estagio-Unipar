@@ -1,4 +1,4 @@
-@(menu: Html, header: Html)
+@(menu: Html, header: Html, clinicaForm : Form[Teste])
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -69,7 +69,8 @@
 						<h3>Clínica</h3>
 					</div>
 					<div class="content">
-						<form class="form-horizontal" role="form" action="#">
+<!-- 						<form class="form-horizontal"> -->
+    						@helper.form(action = routes.ClinicaController.gravar(), 'class -> "form-horizontal") {
 							<div class="form-group">
 								<label class="col-sm-2 control-label" for="nick">Logo:</label>
 								<div class="col-sm-9">
@@ -84,8 +85,14 @@
 							<div class="form-group">
 								<label class="col-sm-2 control-label">Nome:</label>
 								<div class="col-sm-6">
-									<input type="text" class="form-control"
-										placeholder="Nome da clínica">
+<!-- 									<input class="form-control"> -->
+<!-- 									@helper.inputText(clinicaForm("nome"), 'class -> "form-control") -->
+										@helper.inputText(clinicaForm("nome"), 
+										    'id -> "nome",
+										    'class -> "form-control",
+										    '_label -> "",
+										    '_help -> ""
+										)
 								</div>
 								<label class="col-sm-1 control-label">Telefone:</label>
 								<div class="col-sm-2">
@@ -141,11 +148,12 @@
 							<br>
 							<div class="form-group">
 								<div class="col-sm-offset-8 col-sm-4">
-									<button type="submit" class="btn btn-primary">Atualizar</button>
-									<button class="btn btn-default">Cancelar</button>
+									<button type="submit" class="btn btn-primary" id="singlebutton" name="singlebutton">Atualizar</button>
+<!-- 									<button class="btn btn-default">Cancelar</button> -->
 								</div>
 							</div>
-						</form>
+						}
+<!-- 						</form> -->
 					</div>
 				</div>
 			</div>
